@@ -11,6 +11,8 @@ jobs:
        with: 
          node-version: 18
     -  name: install dependencies
-       run: npm ci
+       run: |
+          cd react && npm ci
     -  name: tests
-       run: npm test
+       run: |
+          cd react && npm test
