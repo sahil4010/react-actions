@@ -1,0 +1,16 @@
+name: react-workflow
+on: push
+jobs:
+  first:
+    runs-on: ubuntu-latest
+    steps:
+    -  name: get code
+       uses: actions/checkout@v4
+    -  name: install nodejs
+       uses: actions/setup-node@v4
+       with: 
+         node-version: 18
+    -  name: install dependencies
+       run: npm install
+    -  name: tests
+       run: npm test
