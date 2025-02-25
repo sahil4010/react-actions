@@ -1,5 +1,5 @@
 name: react-workflow
-on: push
+on: push  #for multiple triggers use lists example [push, etc]
 jobs:
    first:
       runs-on: ubuntu-latest
@@ -17,7 +17,8 @@ jobs:
          run: |
             cd react && npm test
    second:
-      needs: first 
+      needs: first  # used for sequential running (in this second will run after succesfull running 
+      # of first) and for multiple [first, etc] can be used
       runs-on: ubuntu-latest
       steps:
       -  name: get code
